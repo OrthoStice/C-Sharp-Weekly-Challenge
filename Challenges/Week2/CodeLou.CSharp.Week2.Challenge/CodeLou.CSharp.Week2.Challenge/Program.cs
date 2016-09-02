@@ -9,24 +9,25 @@ namespace CodeLou.CSharp.Week2.Challenge
             Console.WriteLine("Press <Enter> to begin...");
             Console.ReadLine();
             Console.WriteLine("This is the launch application for the first human mission to Mars.");
-            Console.Write("Enter the number of seconds you would like to count down from: ");
-            var countDownEntry = Console.Read();
+            Console.WriteLine("Enter the number of seconds you would like to count down from: ");
+            var countDownEntry = Console.ReadLine();
+            var countDownNum = Int32.Parse(countDownEntry);
             // Task 4:
             // Write a condition to test whether the number that they entered is less than or equal to zero.
             // Call the IsLessThanOrEqualToZero() method below, passing the user's number as a parameter.
             // If the result is true, write "Please enter a positive number." to the console.
             // Hint: The input that you captured is currently a string type. You will have to "parse" it
             //       as a different type in order to pass it to the IsLessThanOrEqualToZero function.
-            if (IsLessThanOrEqualToZero(countDownEntry))
+            if (IsLessThanOrEqualToZero(countDownNum))
             {
                 Console.WriteLine("Please enter a positive number.");
             }
             else
             {
-                while(countDownEntry >0)
+                while(countDownNum >0)
                 {
-                    Console.WriteLine(countDownEntry);
-                    countDownEntry--;
+                    Console.WriteLine(countDownNum);
+                    countDownNum--;
                 }
                 Console.WriteLine("LIFTOFF!");
             }
