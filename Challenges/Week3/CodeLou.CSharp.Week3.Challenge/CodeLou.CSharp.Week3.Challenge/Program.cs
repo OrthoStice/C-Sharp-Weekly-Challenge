@@ -12,10 +12,12 @@ namespace CodeLou.CSharp.Week3.Challenge
 			// This calendar application will accept multiple event types which will be represented by their own class types. 
 			// You will be dealing with Appointments, Meetings, and Reminders.
 
+
 			// Task 1:
 			// Create new classes that will represent the calendar items that you will be using. 
 			// Each of your classes will inherit from the CalendarItemBase abstract class.
 			// Reminders have already been created as an example.
+
 			
 			// Task 2:
 			// Define Your Data
