@@ -74,8 +74,10 @@ namespace CodeLou.CSharp.Week3.Challenge
 						switch (selectedType)
 						{//switch statements require a "break;", be careful not to experience this error
 							case ('A'):
+                                var newAppointment = appointmentRepository.Create();
+                                break;
 							case ('M'):
-								throw new NotImplementedException();
+								var newMeeting = meetingRepository.Create();
 								break;
 							case ('R'):
 								var newReminder = reminderRepository.Create();

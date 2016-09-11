@@ -2,13 +2,10 @@
 
 namespace CodeLou.CSharp.Week3.Challenge
 {
-	public abstract class CalendarItemBase
+	public abstract class CalendarItemBase 
 	{
 		public int Id { get; set; }
         public DateTime StartDateTime { get; set; }
-        public DateTime EndDateTime { get; set; }
-        public string Location { get; set; }
-        public string[] Attendees { get; set; }
     }
 }
 
