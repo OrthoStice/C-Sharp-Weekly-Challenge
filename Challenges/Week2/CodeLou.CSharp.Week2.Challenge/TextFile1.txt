@@ -1,0 +1,43 @@
+@{
+    Layout = null;
+  
+    var title = "Super Mario 64";
+    var description = "Super Mario 64 is a 1996 platform video game developed and published by Nintendo for the Nintendo 64.";
+    var characters = new string[]
+    {
+        "Mario",
+        "Princess Peach",
+        "Bowser",
+        "Toad",
+        "Yoshi"
+    };
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Video Game Detail</title>
+</head>
+<body>
+    <div>
+        <h1>@title</h1>
+    
+        <h5>Description:</h5>
+        <div>@description</div>
+        
+        <h5>Characters:</h5>
+        <div>
+            <ul>
+
+              @for (var character in characters) 
+              {
+              <li>@character</li>
+              }
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

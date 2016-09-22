@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using Newtonsoft.Json; //Build the project to cause Visual Studio to load this external NuGet package.
 
+
 namespace CodeLou.CSharp.Week3.Challenge
 {
-    public class MeetingRepository : ICalendarItemRepository<Meeting>
+    public class AppointmentRepository : ICalendarItemRepository<Appointment>
     {
-        //Info: This is a neat type that allows you to lookup items by ID, be careful not to ask for an item that isn't there.
-        private readonly Dictionary<int, Meeting> _dictionary;
+        private bool StartDateTime;
 
-        public MeetingRepository()
+        //Info: This is a neat type that allows you to lookup items by ID, be careful not to ask for an item that isn't there.
+        private readonly Dictionary<int, Appointment> _dictionary;
+
+        public AppointmentRepository()
         {
-            _dictionary = new Dictionary<int, Meeting>();
+            _dictionary = new Dictionary<int, Appointment>();
         }
 
-        public Meeting Create()
+        public Appointment Create()
         {
             //Challenge: Can you find a more efficient way to do this?
             var nextAvailableId = 0;
@@ -28,50 +31,49 @@ namespace CodeLou.CSharp.Week3.Challenge
                 nextAvailableId++;
             }
 
-            var meeting = new Meeting();
-            meeting.Id = nextAvailableId;
-            _dictionary.Add(nextAvailableId, new Meeting());
+            var appointment = new Appointment();
+            appointment.Id = nextAvailableId;
+            _dictionary.Add(nextAvailableId, new Appointment());
 
-            return meeting;
+            return appointment;
         }
 
-        public Meeting FindById(int id)
+        public void Delete(Appointment item)
         {
             throw new NotImplementedException();
         }
 
-        public Meeting Update(Meeting item)
+        public IEnumerable<Appointment> FindByDate(DateTime date)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(Meeting item)
+        public Appointment FindById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Meeting> FindByDate(DateTime date)
+        public IEnumerable<Appointment> GetAllItems()
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<Meeting> GetAllItems()
+        // Appointments need to be assigned a start date and time, an end date and time, and a location.
+        public void LoadFromJson(string json)
         {
             throw new NotImplementedException();
         }
 
         public string ToJson()
-        {   //TODO testing todo feature
+        {
             throw new NotImplementedException();
         }
 
-        public void LoadFromJson(string json)
+        public Appointment Update(Appointment item)
         {
             throw new NotImplementedException();
         }
     }
 }
-
         //Callenge: Are you finding that you are writing this same code many times? Is there a better way? 
         //Could you use inheritance?
-	
+

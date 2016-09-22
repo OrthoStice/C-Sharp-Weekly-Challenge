@@ -77,4 +77,8 @@ namespace CodeLou.CSharp.Week3.Challenge
 			}
 		}
 	}
+
+    internal class FindByDate
+    {
+    }
 }
