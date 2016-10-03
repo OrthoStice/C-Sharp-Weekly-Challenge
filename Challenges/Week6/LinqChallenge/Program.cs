@@ -66,11 +66,14 @@ namespace LinqChallenge
                 (from t in Routes
                  where t.DestinationAirport == "SDF" || t.DestinationAirport == "LOU"
                  select t).Count();
+
             Console.WriteLine(terminateInLouisville.ToString());
 
             NewQuestion();
 
             Console.WriteLine("Give me a list of Countries and how many airports in each country, as long as they have more than 100 airports?");
+
+
 
             // If you get this far, this is probably good enough skills for being able to do your class project. 
             // But if you want to challenge yourself, keep on! 
