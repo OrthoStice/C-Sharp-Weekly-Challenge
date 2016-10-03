@@ -51,11 +51,22 @@ namespace LinqChallenge
 
             NewQuestion();
 
-            Console.WriteLine("How many routes originate in in louisville? ");
+            Console.WriteLine("How many routes originate in louisville? ");
+
+            var originateInLouisville = Routes
+                .Where(r => r.SourceAirport == "SDF" || r.SourceAirport == "LOU").Count();
+
+                Console.WriteLine(originateInLouisville.ToString());
 
             NewQuestion();
 
             Console.WriteLine("How many routes terminate in Louisville?");
+
+            var terminateInLouisville =
+                (from t in Routes
+                 where t.DestinationAirport == "SDF" || t.DestinationAirport == "LOU"
+                 select t).Count();
+            Console.WriteLine(terminateInLouisville.ToString());
 
             NewQuestion();
 
