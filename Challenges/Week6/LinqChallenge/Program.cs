@@ -73,7 +73,13 @@ namespace LinqChallenge
 
             Console.WriteLine("Give me a list of Countries and how many airports in each country, as long as they have more than 100 airports?");
 
+            var numberOfAirportsPerCountry =
+                Airports.GroupBy(x => x.Country).Where(y => y.Count() > 100);
 
+            foreach (var country in numberOfAirportsPerCountry)
+            {
+                Console.WriteLine(country.Key + " " + country.Count());
+            }
 
             // If you get this far, this is probably good enough skills for being able to do your class project. 
             // But if you want to challenge yourself, keep on! 
